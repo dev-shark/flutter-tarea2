@@ -1,41 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:helloworld/icono.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  const MyApp();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+      title: 'Icon Widget',
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Icon widget'),
+          ),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Icono(
+                icono: Icons.favorite,
+                color: Colors.green,
+                tamano: 24,
+                seo: 'Agrega un me gusta al articulo',
+                direccion: TextDirection.ltr,
+              ),
+              Icono(
+                icono: Icons.abc,
+                color: Colors.red,
+                tamano: 50,
+                seo: "Esto es un mensaje",
+                direccion: TextDirection.ltr,
+              ),
+              Icono(
+                icono: Icons.chrome_reader_mode,
+                color: Colors.blue,
+                direccion: TextDirection.ltr,
+                tamano: 200,
+                seo: "Agrega un mensaje",
+              ),
+            ],
+          )),
     );
   }
 }
